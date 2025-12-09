@@ -36,12 +36,12 @@ export class Certifications {
     },
     {
       id: '3',
-      title: 'Ingeniería en Sistemas',
-      issuer: 'Universidad Nacional',
+      title: 'Titulo de prueba',
+      issuer: 'Universidad de prueba',
       issueDate: '2018-06-01',
-      expirationDate: '2022-12-31',
+      expirationDate: '2025-12-31',
       type: 'education',
-      description: 'Grado universitario en Ingeniería en Sistemas de Información',
+      description: 'Titulo de prueba',
     },
     {
       id: '4',
