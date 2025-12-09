@@ -1,0 +1,4 @@
+# Services folder
+# Aquí puedes agregar servicios para lógica compartida
+# Ejemplo: data.service.ts, portfolio.service.ts, etc.
+
