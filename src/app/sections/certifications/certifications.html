@@ -1,0 +1,121 @@
+<section id="certifications" class="certifications-section">
+  <div class="certifications-container">
+    <h1 class="section-title">
+      Certificaciones y <span class="purple">Estudios</span>
+    </h1>
+    <p class="section-subtitle">
+      Mi formación académica y certificaciones profesionales que respaldan mi experiencia.
+    </p>
+
+    <!-- Certificaciones -->
+    <div class="certifications-category">
+      <h2 class="category-title">
+        <i class="pi pi-certificate"></i>
+        Certificaciones
+      </h2>
+      <div class="certifications-grid">
+        @for (cert of getCertificationsByType('certification'); track cert.id) {
+          <p-card [styleClass]="'certification-card card-base'">
+            <ng-template pTemplate="header">
+              <div class="certification-image">
+                @if (cert.imageUrl) {
+                  <img [src]="cert.imageUrl" [alt]="cert.title" />
+                } @else {
+                  <div class="certification-icon">
+                    <i class="pi pi-certificate"></i>
+                  </div>
+                }
+              </div>
+            </ng-template>
+            <div class="certification-content">
+              <h3 class="certification-title heading-base">{{ cert.title }}</h3>
+              <div class="certification-info">
+                <div class="certification-issuer">
+                  <i class="pi pi-building"></i>
+                  <span>{{ cert.issuer }}</span>
+                </div>
+                <div class="certification-date">
+                  <i class="pi pi-calendar"></i>
+                  <span>Emitida: {{ formatDate(cert.issueDate) }}</span>
+                  @if (cert.expirationDate) {
+                    <span class="expiration"> • Expira: {{ formatDate(cert.expirationDate) }}</span>
+                  }
+                </div>
+                @if (cert.description) {
+                  <p class="certification-description text-secondary">{{ cert.description }}</p>
+                }
+              </div>
+              <div class="certification-actions">
+                @if (cert.credentialUrl) {
+                  <p-button
+                    label="Ver Credencial"
+                    icon="pi pi-external-link"
+                    [outlined]="true"
+                    [styleClass]="'certification-button'"
+                    (onClick)="window.open(cert.credentialUrl, '_blank')"
+                  ></p-button>
+                }
+              </div>
+            </div>
+          </p-card>
+        }
+      </div>
+    </div>
+
+    <!-- Estudios -->
+    <div class="certifications-category">
+      <h2 class="category-title">
+        <i class="pi pi-graduation-cap"></i>
+        Estudios
+      </h2>
+      <div class="certifications-grid">
+        @for (edu of getCertificationsByType('education'); track edu.id) {
+          <p-card [styleClass]="'certification-card card-base'">
+            <ng-template pTemplate="header">
+              <div class="certification-image">
+                @if (edu.imageUrl) {
+                  <img [src]="edu.imageUrl" [alt]="edu.title" />
+                } @else {
+                  <div class="certification-icon">
+                    <i class="pi pi-graduation-cap"></i>
+                  </div>
+                }
+              </div>
+            </ng-template>
+            <div class="certification-content">
+              <h3 class="certification-title heading-base">{{ edu.title }}</h3>
+              <div class="certification-info">
+                <div class="certification-issuer">
+                  <i class="pi pi-building"></i>
+                  <span>{{ edu.issuer }}</span>
+                </div>
+                <div class="certification-date">
+                  <i class="pi pi-calendar"></i>
+                  <span>{{ formatDate(edu.issueDate) }}</span>
+                  @if (edu.expirationDate) {
+                    <span> - {{ formatDate(edu.expirationDate) }}</span>
+                  }
+                </div>
+                @if (edu.description) {
+                  <p class="certification-description text-secondary">{{ edu.description }}</p>
+                }
+              </div>
+              <div class="certification-actions">
+                @if (edu.credentialUrl) {
+                  <p-button
+                    label="Ver Diploma"
+                    icon="pi pi-external-link"
+                    [outlined]="true"
+                    [styleClass]="'certification-button'"
+                    (onClick)="window.open(edu.credentialUrl, '_blank')"
+                  ></p-button>
+                }
+              </div>
+            </div>
+          </p-card>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+

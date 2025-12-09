@@ -1,1 +1,20 @@
-<p>header works!</p>
+<nav [class.sticky]="isSticky()" class="navbar">
+  <p-menubar [model]="items" [styleClass]="'custom-menubar'">
+    <ng-template pTemplate="start">
+      <div class="logo-container">
+        <span class="logo-text">Portafolio</span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="end">
+      <div class="theme-toggle-container">
+        <i class="pi pi-sun theme-icon"></i>
+        <p-toggleswitch
+          [ngModel]="themeService.isDarkMode()"
+          (ngModelChange)="themeService.toggleTheme()"
+          [styleClass]="'theme-switch'"
+        ></p-toggleswitch>
+        <i class="pi pi-moon theme-icon"></i>
+      </div>
+    </ng-template>
+  </p-menubar>
+</nav>

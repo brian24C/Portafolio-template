@@ -1,0 +1,220 @@
+/**
+ * Certifications Section Styles
+ * Solo estilos de layout y estructura
+ * Colores y temas se manejan desde styles.css
+ */
+
+.certifications-section {
+  position: relative;
+  padding: 150px 2rem 50px;
+  background: var(--bg-section);
+  min-height: 100vh;
+}
+
+.certifications-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-subtitle {
+  margin-bottom: 1rem;
+}
+
+.certifications-category {
+  margin-bottom: 4rem;
+}
+
+.certifications-category:last-child {
+  margin-bottom: 0;
+}
+
+.category-title {
+  font-size: 2em;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-title i {
+  font-size: 1.2em;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Card styles - Especificidad mejorada */
+:host ::ng-deep .certification-card {
+  transition: all 0.5s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+:host ::ng-deep .certification-card .p-card {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+:host ::ng-deep .certification-card .p-card-body {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+}
+
+:host ::ng-deep .certification-card .p-card-content {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+}
+
+:host ::ng-deep .certification-card:hover {
+  transform: scale(1.02);
+}
+
+.certification-image {
+  width: 100%;
+  height: 200px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px 8px 0 0;
+  flex-shrink: 0;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.certification-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.certification-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: var(--text-accent);
+}
+
+.certification-content {
+  padding: 1.5rem;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+
+.certification-title {
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  min-height: 3em;
+  max-height: 3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+.certification-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.certification-issuer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.1em;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.certification-issuer i {
+  color: var(--text-accent);
+}
+
+.certification-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.95em;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.certification-date i {
+  color: var(--text-accent);
+}
+
+.expiration {
+  color: var(--text-warning, #f59e0b);
+}
+
+.certification-description {
+  margin-bottom: 0;
+  line-height: 1.6;
+  flex-shrink: 0;
+}
+
+.credential-id {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9em;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.credential-id i {
+  color: var(--text-accent);
+}
+
+.certification-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+:host ::ng-deep .certification-button {
+  flex: 1;
+}
+
+@media (max-width: 767px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 2em;
+  }
+
+  .category-title {
+    font-size: 1.5em;
+  }
+}
+

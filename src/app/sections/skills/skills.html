@@ -1,1 +1,19 @@
-<p>skills works!</p>
+<section id="skills" class="skills-section">
+  <div class="skills-container">
+    <h1 class="section-title">
+      Mis <span class="purple">Habilidades</span>
+    </h1>
+    <div class="skills-grid">
+      @for (skill of skills; track skill.name) {
+        <p-card [styleClass]="'skill-card card-base'">
+          <div class="skill-content">
+            <h3 class="heading-base">{{ skill.name }}</h3>
+            <div class="category-tag-wrapper">
+              <p-tag [value]="skill.category" [styleClass]="'tag-base'"></p-tag>
+            </div>
+          </div>
+        </p-card>
+      }
+    </div>
+  </div>
+</section>

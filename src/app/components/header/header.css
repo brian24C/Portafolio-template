@@ -1,0 +1,109 @@
+/**
+ * Header Component Styles
+ * Solo estilos de layout y estructura
+ * Colores y temas se manejan desde styles.css
+ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-out;
+  padding: 0.3rem 2rem;
+  background: transparent;
+}
+
+.navbar.sticky {
+  background-color: var(--bg-navbar-sticky);
+  backdrop-filter: blur(15px);
+  box-shadow: var(--shadow-navbar);
+}
+
+/* Menubar de PrimeNG - Especificidad mejorada */
+:host ::ng-deep .custom-menubar {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+:host ::ng-deep .custom-menubar .p-menubar-root-list > .p-menubar-item > .p-menubar-link {
+  color: var(--text-primary);
+  padding: 0.8rem 1rem;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+:host ::ng-deep .custom-menubar .p-menubar-root-list > .p-menubar-item > .p-menubar-link:hover {
+  background: rgba(14, 165, 233, 0.2);
+}
+
+:host ::ng-deep .custom-menubar .p-menubar-root-list > .p-menubar-item > .p-menubar-link .p-menubar-icon {
+  margin-right: 0.5rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-right: 2rem;
+}
+
+.theme-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 2rem;
+}
+
+.theme-icon {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+/* Toggle Switch - Especificidad mejorada */
+:host ::ng-deep .theme-switch {
+  margin: 0;
+}
+
+:host ::ng-deep .theme-switch .p-toggleswitch-slider {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+:host ::ng-deep .theme-switch.p-toggleswitch-checked .p-toggleswitch-slider {
+  background: var(--color-accent);
+}
+
+:host ::ng-deep .theme-switch .p-toggleswitch-slider:before {
+  background: white;
+}
+
+/* Light mode adjustments */
+:host-context(.app-light) ::ng-deep .theme-switch .p-toggleswitch-slider {
+  background: rgba(15, 23, 42, 0.2);
+}
+
+:host-context(.app-light) ::ng-deep .custom-menubar .p-menubar-root-list > .p-menubar-item > .p-menubar-link:hover {
+  background: rgba(14, 165, 233, 0.1);
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .theme-toggle-container {
+    margin-left: 1rem;
+    gap: 0.3rem;
+  }
+
+  .theme-icon {
+    font-size: 0.9rem;
+  }
+}
