@@ -10,7 +10,7 @@ import { ButtonModule } from 'primeng/button';
 })
 export class Hero {
   name = signal('BRIAN');
-  roles = signal(['Desarrollador Full Stack', 'Diseñador UI/UX', 'Entusiasta de la Tecnología']);
+  roles = signal(['Desarrollador Full Stack', 'Entusiasta de la Tecnología']);
   currentRole = signal(0);
 
   constructor() {
