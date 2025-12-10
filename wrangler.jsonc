@@ -1,0 +1,8 @@
+{
+  "name": "portafolio-template",
+  "compatibility_date": "2025-01-10",
+  "assets": {
+    "directory": "./dist"
+  }
+}
+
