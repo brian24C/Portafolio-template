@@ -1,0 +1,51 @@
+/**
+ * Skills Section Styles
+ * Solo estilos de layout y estructura
+ * Colores y temas se manejan desde styles.css
+ */
+
+.skills-section {
+  position: relative;
+  padding: 150px 2rem 50px;
+  background: var(--bg-section);
+  min-height: 100vh;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Card transitions - Especificidad mejorada */
+:host ::ng-deep .skill-card {
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-content {
+  padding: 1.5rem;
+}
+
+.skill-content h3 {
+  font-size: 1.3em;
+  margin: 0 0 1rem 0;
+}
+
+.category-tag-wrapper {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,462 @@
+/**
+ * ============================================
+ * ESTILOS GLOBALES - PORTAFOLIO
+ * ============================================
+ * 
+ * Este archivo centraliza todos los estilos globales de la aplicación.
+ * 
+ * ESTRUCTURA:
+ * 1. Variables CSS (Dark/Light Mode)
+ * 2. Reset y estilos base
+ * 3. Clases utilitarias reutilizables
+ * 4. Estilos específicos de componentes
+ * 5. Overrides de PrimeNG (con especificidad mejorada)
+ * 
+ * MEJORES PRÁCTICAS APLICADAS:
+ * - Variables CSS para temas centralizados
+ * - Especificidad CSS mejorada (menos !important)
+ * - Selectores específicos para PrimeNG
+ * - Documentación clara
+ */
+
+/* ============================================
+   IMPORTS
+   ============================================ */
+@import 'primeicons/primeicons.css';
+
+/* ============================================
+   VARIABLES CSS - DARK MODE (Default)
+   ============================================ */
+:root {
+  /* Colores principales */
+  --color-primary: #0ea5e9;
+  --color-accent: #0284c7;
+  --color-accent-hover: #0369a1;
+  --color-dark: #0f172a;
+  
+  /* Fondos */
+  --bg-body: #0c0513;
+  --bg-section: linear-gradient(
+    to bottom left,
+    rgba(17, 16, 16, 0.582),
+    rgba(12, 8, 24, 0.904)
+  );
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --bg-input: rgba(255, 255, 255, 0.1);
+  --bg-icon: rgba(255, 255, 255, 0.1);
+  --bg-icon-hover: var(--color-accent);
+  --bg-avatar: rgba(14, 165, 233, 0.1);
+  --bg-tech-icon: rgba(255, 255, 255, 0.05);
+  --bg-tech-icon-hover: rgba(14, 165, 233, 0.08);
+  --bg-tag: rgba(14, 165, 233, 0.2);
+  --bg-navbar-sticky: rgba(27, 26, 46, 0.9);
+  
+  /* Textos */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.9);
+  --text-muted: rgba(255, 255, 255, 0.8);
+  --text-accent: var(--color-primary);
+  --text-heading: #ffffff;
+  
+  /* Bordes */
+  --border-card: rgba(255, 255, 255, 0.1);
+  --border-card-hover: rgba(255, 255, 255, 0.15);
+  --border-input: rgba(14, 165, 233, 0.3);
+  --border-input-focus: var(--color-accent);
+  --border-tech-icon: rgba(14, 165, 233, 0.5);
+  --border-tech-icon-hover: rgba(2, 132, 199, 0.8);
+  --border-tag: rgba(14, 165, 233, 0.4);
+  --border-avatar: var(--color-accent);
+  
+  /* Sombras */
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-icon: 0 5px 15px rgba(14, 165, 233, 0.4);
+  --shadow-avatar: 0 0 30px rgba(14, 165, 233, 0.3);
+  --shadow-tech-icon: 4px 5px 4px 3px rgba(14, 165, 233, 0.2);
+  --shadow-navbar: 0px 10px 10px 0px rgba(9, 5, 29, 0.171);
+  
+  /* Scrollbar */
+  --scrollbar-track: #1e293b;
+  --scrollbar-thumb: rgba(14, 165, 233, 0.8);
+  --scrollbar-thumb-hover: rgba(2, 132, 199, 0.9);
+}
+
+/* ============================================
+   VARIABLES CSS - LIGHT MODE
+   ============================================ */
+.app-light {
+  /* Colores principales */
+  --color-primary: #0369a1;
+  --color-accent: #0284c7;
+  --color-accent-hover: #0369a1;
+  
+  /* Fondos */
+  --bg-body: #ffffff;
+  --bg-section: linear-gradient(
+    to bottom left,
+    rgba(255, 255, 255, 0.98),
+    rgba(248, 250, 252, 0.98)
+  );
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-input: #ffffff;
+  --bg-icon: rgba(15, 23, 42, 0.05);
+  --bg-icon-hover: var(--color-accent);
+  --bg-avatar: rgba(14, 165, 233, 0.05);
+  --bg-tech-icon: rgba(15, 23, 42, 0.03);
+  --bg-tech-icon-hover: rgba(14, 165, 233, 0.08);
+  --bg-tag: rgba(14, 165, 233, 0.1);
+  --bg-navbar-sticky: rgba(255, 255, 255, 0.9);
+  
+  /* Textos */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-accent: #0369a1;
+  --text-heading: #0f172a;
+  
+  /* Bordes */
+  --border-card: rgba(0, 0, 0, 0.1);
+  --border-card-hover: rgba(0, 0, 0, 0.15);
+  --border-input: #e2e8f0;
+  --border-input-focus: var(--color-accent);
+  --border-tech-icon: rgba(14, 165, 233, 0.3);
+  --border-tech-icon-hover: rgba(2, 132, 199, 0.5);
+  --border-tag: rgba(14, 165, 233, 0.3);
+  --border-avatar: rgba(2, 132, 199, 0.3);
+  
+  /* Sombras */
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-icon: 0 5px 15px rgba(14, 165, 233, 0.3);
+  --shadow-avatar: 0 0 30px rgba(14, 165, 233, 0.15);
+  --shadow-tech-icon: 4px 5px 4px 3px rgba(14, 165, 233, 0.15);
+  --shadow-navbar: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+  
+  /* Scrollbar */
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: rgba(14, 165, 233, 0.6);
+  --scrollbar-thumb-hover: rgba(2, 132, 199, 0.8);
+}
+
+/* ============================================
+   RESET Y ESTILOS BASE
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  background: var(--bg-body);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
+   CLASES UTILITARIAS - SECCIONES
+   ============================================ */
+.section-base {
+  position: relative;
+  padding: 150px 2rem 50px;
+  background: var(--bg-section);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5em;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--text-heading);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 4rem;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   CLASES UTILITARIAS - TEXTOS
+   ============================================ */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-accent {
+  color: var(--text-accent);
+}
+
+.text-heading {
+  color: var(--text-heading);
+}
+
+.heading-base {
+  color: var(--text-heading);
+}
+
+.heading-accent {
+  color: var(--text-accent);
+}
+
+.purple {
+  color: var(--text-accent);
+}
+
+/* ============================================
+   CLASES UTILITARIAS - COMPONENTES
+   ============================================ */
+
+/* Cards - Usa especificidad mejorada en lugar de !important */
+.card-base {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+}
+
+.card-base:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-card-hover);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Iconos sociales */
+.icon-social {
+  background: var(--bg-icon);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.icon-social:hover {
+  background: var(--bg-icon-hover);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-icon);
+}
+
+/* Tech Icons */
+.tech-icon-base {
+  background: var(--bg-tech-icon);
+  border: 1.7px solid var(--border-tech-icon);
+  color: var(--text-primary);
+  transition: all 0.4s ease;
+}
+
+.tech-icon-base:hover {
+  background: var(--bg-tech-icon-hover);
+  border-color: var(--border-tech-icon-hover);
+  box-shadow: var(--shadow-tech-icon);
+  transform: scale(1.05);
+}
+
+/* Avatar */
+.avatar-base {
+  background: var(--bg-avatar);
+  border: 3px solid var(--border-avatar);
+  box-shadow: var(--shadow-avatar);
+}
+
+/* Navbar */
+.navbar-sticky-base {
+  background-color: var(--bg-navbar-sticky);
+  backdrop-filter: blur(15px);
+  box-shadow: var(--shadow-navbar);
+}
+
+/* ============================================
+   ESTILOS ESPECÍFICOS - HERO SECTION
+   ============================================ */
+.heading {
+  font-size: 2.4em;
+  margin-bottom: 1rem;
+}
+
+.heading-name {
+  font-size: 2.5em;
+  margin-bottom: 2rem;
+}
+
+.main-name {
+  color: var(--text-accent);
+}
+
+.typewriter-text {
+  font-size: 2.2em;
+  color: var(--text-accent);
+  font-weight: 600;
+}
+
+/* ============================================
+   SCROLLBAR PERSONALIZADO
+   ============================================ */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* ============================================
+   OVERRIDES PRIMENG - MEJOR ESPECIFICIDAD
+   ============================================
+   Nota: Usamos selectores más específicos para evitar !important
+   y mejorar el mantenimiento del código.
+   ============================================ */
+
+/* Cards de PrimeNG - Especificidad mejorada */
+body .p-card.card-base,
+body .p-card[styleClass*="card-base"] {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+}
+
+body .p-card.card-base:hover,
+body .p-card[styleClass*="card-base"]:hover {
+  border-color: var(--border-card-hover);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Inputs de PrimeNG - Especificidad mejorada */
+body .p-inputtext.input-base,
+body .p-inputtextarea.input-base,
+body input.p-inputtext,
+body textarea.p-inputtextarea {
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  color: var(--text-primary);
+}
+
+body .p-inputtext.input-base:focus,
+body .p-inputtextarea.input-base:focus,
+body input.p-inputtext:focus,
+body textarea.p-inputtextarea:focus {
+  border-color: var(--border-input-focus);
+  box-shadow: 0 0 0 0.2rem rgba(14, 165, 233, 0.25);
+  outline: none;
+}
+
+body .p-inputtext.input-base::placeholder,
+body .p-inputtextarea.input-base::placeholder,
+body input.p-inputtext::placeholder,
+body textarea.p-inputtextarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Buttons de PrimeNG - Especificidad mejorada */
+body .p-button.btn-primary,
+body .p-button[styleClass*="btn-primary"] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+body .p-button.btn-primary:hover,
+body .p-button[styleClass*="btn-primary"]:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+body .p-button.p-button-outlined {
+  border-color: var(--color-accent);
+  color: var(--text-accent);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+body .p-button.p-button-outlined:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+/* Progress Bar de PrimeNG */
+body .p-progressbar.progressbar-base .p-progressbar-value,
+body .p-progressbar[styleClass*="progressbar-base"] .p-progressbar-value {
+  background: var(--color-accent);
+}
+
+/* Tags de PrimeNG */
+body .p-tag.tag-base,
+body .p-tag[styleClass*="tag-base"] {
+  background: var(--bg-tag);
+  color: var(--text-accent);
+  border: 1px solid var(--border-tag);
+}
+
+/* Toggle Switch de PrimeNG */
+body .p-toggleswitch.p-toggleswitch-checked .p-toggleswitch-slider {
+  background: var(--color-accent);
+}
+
+/* Menubar de PrimeNG */
+body .p-menubar .p-menubar-root-list > .p-menubar-item > .p-menubar-link {
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+body .p-menubar .p-menubar-root-list > .p-menubar-item > .p-menubar-link:hover {
+  background: rgba(14, 165, 233, 0.2);
+}
+
+body.app-light .p-menubar .p-menubar-root-list > .p-menubar-item > .p-menubar-link:hover {
+  background: rgba(14, 165, 233, 0.1);
+}
+
+/* ============================================
+   FALLBACKS PARA CASOS ESPECIALES
+   ============================================
+   Solo usamos !important cuando es absolutamente necesario
+   para sobrescribir estilos inline de PrimeNG
+   ============================================ */
+
+/* Fallback para estilos inline de PrimeNG que no se pueden sobrescribir */
+body .p-card[style*="background"] {
+  background: var(--bg-card) !important;
+}
+
+body .p-button[style*="background"] {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}

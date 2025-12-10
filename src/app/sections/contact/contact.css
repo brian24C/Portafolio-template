@@ -1,0 +1,57 @@
+/**
+ * Contact Section Styles
+ * Solo estilos de layout y estructura
+ * Colores y temas se manejan desde styles.css
+ */
+
+.contact-section {
+  position: relative;
+  padding: 150px 2rem 50px;
+  background: var(--bg-section);
+  min-height: 100vh;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Card body padding - Especificidad mejorada */
+:host ::ng-deep .contact-card .p-card-body {
+  padding: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+/* Inputs - Especificidad mejorada */
+:host ::ng-deep .p-inputtext,
+:host ::ng-deep .p-inputtextarea {
+  width: 100%;
+  padding: 0.75rem;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem 2rem;
+  font-size: 1.1em;
+}

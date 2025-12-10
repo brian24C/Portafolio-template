@@ -1,0 +1,59 @@
+<section id="home" class="home-section">
+  <div class="home-content">
+    <div class="home-container">
+      <div class="home-text">
+        <h1 class="heading heading-base">
+          ¡Hola! <span class="wave">👋</span>
+        </h1>
+        <h1 class="heading-name heading-base">
+          Soy <strong class="main-name heading-accent">{{ name() }}</strong>
+        </h1>
+        <div class="typewriter-container">
+          <p class="typewriter-text">
+            {{ roles()[currentRole()] }}
+          </p>
+        </div>
+        <div class="home-buttons">
+          <p-button
+            label="Ver Proyectos"
+            icon="pi pi-briefcase"
+            [outlined]="true"
+            (onClick)="scrollToSection('projects')"
+            [styleClass]="'custom-button'"
+          ></p-button>
+          <p-button
+            label="Contactar"
+            icon="pi pi-envelope"
+            (onClick)="scrollToSection('contact')"
+            [styleClass]="'custom-button primary'"
+          ></p-button>
+        </div>
+      </div>
+      <div class="home-image">
+        <div class="avatar-container">
+          <div class="avatar-placeholder avatar-base">
+            <i class="pi pi-user" style="font-size: 8rem; color: var(--text-accent);"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="social-section">
+    <h2>Encuéntrame en</h2>
+    <p>Siéntete libre de <span class="purple">conectarte</span> conmigo</p>
+    <div class="social-icons">
+      <a href="https://github.com" target="_blank" class="social-icon icon-social">
+        <i class="pi pi-github"></i>
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="social-icon icon-social">
+        <i class="pi pi-linkedin"></i>
+      </a>
+      <a href="https://twitter.com" target="_blank" class="social-icon icon-social">
+        <i class="pi pi-twitter"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank" class="social-icon icon-social">
+        <i class="pi pi-instagram"></i>
+      </a>
+    </div>
+  </div>
+</section>

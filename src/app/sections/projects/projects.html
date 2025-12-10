@@ -1,0 +1,49 @@
+<section id="projects" class="project-section">
+  <div class="project-container">
+    <h1 class="section-title">
+      Mis <span class="purple">Proyectos</span>
+    </h1>
+    <p class="section-subtitle">
+      Aquí hay algunos proyectos en los que he trabajado recientemente.
+    </p>
+    <div class="projects-grid">
+      @for (project of projects; track project.id) {
+        <p-card [styleClass]="'project-card card-base'">
+          <ng-template pTemplate="header">
+            <div class="project-image">
+              <i class="pi pi-image" style="font-size: 4rem; color: var(--text-accent);"></i>
+            </div>
+          </ng-template>
+          <div class="project-content">
+            <h3 class="project-title heading-base">{{ project.title }}</h3>
+            <p class="project-description text-secondary">{{ project.description }}</p>
+            <div class="project-technologies">
+              @for (tech of project.technologies; track tech) {
+                <p-tag [value]="tech" [styleClass]="'tag-base'"></p-tag>
+              }
+            </div>
+            <div class="project-actions">
+              @if (project.githubUrl) {
+                <p-button
+                  label="GitHub"
+                  icon="pi pi-github"
+                  [outlined]="true"
+                  [styleClass]="'project-button'"
+                  (onClick)="window.open(project.githubUrl, '_blank')"
+                ></p-button>
+              }
+              @if (project.liveUrl) {
+                <p-button
+                  label="Ver Demo"
+                  icon="pi pi-external-link"
+                  [styleClass]="'project-button btn-primary'"
+                  (onClick)="window.open(project.liveUrl, '_blank')"
+                ></p-button>
+              }
+            </div>
+          </div>
+        </p-card>
+      }
+    </div>
+  </div>
+</section>

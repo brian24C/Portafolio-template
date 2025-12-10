@@ -1,0 +1,49 @@
+<section id="about" class="about-section">
+  <div class="about-container">
+    <h1 class="section-title">
+      Acerca de <span class="purple">Mí</span>
+    </h1>
+    <div class="about-content">
+      <div class="about-text">
+        <p-card [styleClass]="'about-card card-base'">
+          <p class="text-secondary">
+            Soy un desarrollador apasionado por crear soluciones innovadoras y experiencias
+            de usuario excepcionales. Me especializo en desarrollo full stack, combinando
+            tecnologías modernas para construir aplicaciones escalables y eficientes.
+          </p>
+          <p class="text-secondary">
+            Mi enfoque se centra en escribir código limpio, seguir las mejores prácticas
+            y estar siempre al día con las últimas tendencias tecnológicas.
+          </p>
+        </p-card>
+        <p-card [styleClass]="'about-card card-base youtube-card'">
+          <div class="youtube-content">
+            <div class="youtube-header">
+              <i class="pi pi-youtube youtube-icon"></i>
+              <h3 class="heading-base">Contenido en YouTube</h3>
+            </div>
+            <p class="text-secondary">
+              De vez en cuando creo videos en YouTube sobre tecnología para compartir
+              conocimientos y aportar mi granito de arena a la comunidad de desarrolladores.
+            </p>
+            <a [href]="youtubeUrl" target="_blank" rel="noopener noreferrer" class="youtube-link">
+              <i class="pi pi-external-link"></i>
+              Visitar mi canal
+            </a>
+          </div>
+        </p-card>
+      </div>
+      <div class="tech-stack">
+        <h2 class="heading-base">Tecnologías que manejo</h2>
+        <div class="tech-icons">
+          @for (tech of technologies; track tech.name) {
+            <div class="tech-icon tech-icon-base">
+              <i [class]="tech.icon"></i>
+              <span>{{ tech.name }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

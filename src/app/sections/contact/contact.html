@@ -1,0 +1,60 @@
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <h1 class="section-title">
+      Contácta<span class="purple">me</span>
+    </h1>
+    <p class="section-subtitle">
+      ¿Tienes un proyecto en mente? ¡Hablemos!
+    </p>
+    <div class="contact-content">
+      <p-card [styleClass]="'contact-card card-base'">
+        <form (ngSubmit)="submitForm()" class="contact-form">
+          <div class="form-group">
+            <label for="name" class="text-primary">Nombre</label>
+            <input
+              pInputText
+              id="name"
+              [(ngModel)]="contactForm.name"
+              name="name"
+              required
+              placeholder="Tu nombre"
+              class="input-base"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email" class="text-primary">Email</label>
+            <input
+              pInputText
+              type="email"
+              id="email"
+              [(ngModel)]="contactForm.email"
+              name="email"
+              required
+              placeholder="tu@email.com"
+              class="input-base"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message" class="text-primary">Mensaje</label>
+            <textarea
+              pTextarea
+              id="message"
+              [(ngModel)]="contactForm.message"
+              name="message"
+              required
+              rows="5"
+              placeholder="Tu mensaje..."
+              class="input-base"
+            ></textarea>
+          </div>
+          <p-button
+            type="submit"
+            label="Enviar Mensaje"
+            icon="pi pi-send"
+            [styleClass]="'submit-button btn-primary'"
+          ></p-button>
+        </form>
+      </p-card>
+    </div>
+  </div>
+</section>
