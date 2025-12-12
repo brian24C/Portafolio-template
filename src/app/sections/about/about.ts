@@ -10,18 +10,18 @@ import { TagModule } from 'primeng/tag';
   styleUrl: './about.css',
 })
 export class About {
-  youtubeUrl = 'https://youtube.com'; // Reemplaza con tu URL de YouTube
+  youtubeUrl = 'https://ejemplo-de-url-youtube.com'; // Reemplaza con tu URL de YouTube
 
   technologies = [
-    { name: 'Angular', icon: 'pi pi-code' },
-    { name: 'TypeScript', icon: 'pi pi-code' },
-    { name: 'JavaScript', icon: 'pi pi-code' },
-    { name: 'React', icon: 'pi pi-code' },
-    { name: 'Node.js', icon: 'pi pi-code' },
-    { name: 'Python', icon: 'pi pi-code' },
-    { name: 'Java', icon: 'pi pi-code' },
-    { name: 'MongoDB', icon: 'pi pi-database' },
-    { name: 'PostgreSQL', icon: 'pi pi-database' },
-    { name: 'Git', icon: 'pi pi-github' },
+    { name: 'Ejemplo de tecnología 1', icon: 'pi pi-code' },
+    { name: 'Ejemplo de tecnología 2', icon: 'pi pi-code' },
+    { name: 'Ejemplo de tecnología 3', icon: 'pi pi-code' },
+    { name: 'Ejemplo de tecnología 4', icon: 'pi pi-code' },
+    { name: 'Ejemplo de tecnología 5', icon: 'pi pi-code' },
+    { name: 'Ejemplo de tecnología 6', icon: 'pi pi-code' },
+    { name: 'Ejemplo de tecnología 7', icon: 'pi pi-code' },
+    { name: 'Ejemplo de tecnología 8', icon: 'pi pi-database' },
+    { name: 'Ejemplo de tecnología 9', icon: 'pi pi-database' },
+    { name: 'Ejemplo de tecnología 10', icon: 'pi pi-github' },
   ];
 }

@@ -17,31 +17,31 @@ export class Projects {
   projects: Project[] = [
     {
       id: '1',
-      title: 'Proyecto Ejemplo 1',
+      title: 'Ejemplo de proyecto destacado 1',
       description:
-        'Una aplicación web moderna construida con Angular y PrimeNG. Incluye funcionalidades avanzadas de UI/UX y integración con APIs.',
-      technologies: ['Angular', 'TypeScript', 'PrimeNG', 'Node.js'],
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
+        'Ejemplo de descripción del proyecto. Aquí puedes describir las funcionalidades principales, el propósito del proyecto y cualquier detalle relevante que quieras destacar.',
+      technologies: ['Ejemplo de tecnología 1', 'Ejemplo de tecnología 2', 'Ejemplo de tecnología 3', 'Ejemplo de tecnología 4'],
+      githubUrl: 'https://ejemplo-de-url-github.com',
+      liveUrl: 'https://ejemplo-de-url-demo.com',
       featured: true,
     },
     {
       id: '2',
-      title: 'Proyecto Ejemplo 2',
+      title: 'Ejemplo de proyecto destacado 2',
       description:
-        'Sistema de gestión desarrollado con React y Node.js. Incluye autenticación, base de datos y panel de administración.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
+        'Ejemplo de descripción del segundo proyecto. Puedes incluir información sobre el stack tecnológico utilizado, desafíos resueltos o resultados obtenidos.',
+      technologies: ['Ejemplo de tecnología 1', 'Ejemplo de tecnología 2', 'Ejemplo de tecnología 3', 'Ejemplo de tecnología 4'],
+      githubUrl: 'https://ejemplo-de-url-github.com',
+      liveUrl: 'https://ejemplo-de-url-demo.com',
       featured: true,
     },
     {
       id: '3',
-      title: 'Proyecto Ejemplo 3',
+      title: 'Ejemplo de proyecto regular',
       description:
-        'Aplicación móvil híbrida con funcionalidades en tiempo real. Desarrollada con tecnologías modernas y diseño responsivo.',
-      technologies: ['Ionic', 'Angular', 'Firebase', 'TypeScript'],
-      githubUrl: 'https://github.com',
+        'Ejemplo de descripción de un proyecto no destacado. Este tipo de proyectos aparecerán en la sección general de proyectos.',
+      technologies: ['Ejemplo de tecnología 1', 'Ejemplo de tecnología 2', 'Ejemplo de tecnología 3', 'Ejemplo de tecnología 4'],
+      githubUrl: 'https://ejemplo-de-url-github.com',
       featured: false,
     },
   ];

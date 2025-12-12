@@ -11,14 +11,14 @@ import { TagModule } from 'primeng/tag';
 })
 export class Skills {
   skills = [
-    { name: 'Angular', category: 'frontend' },
-    { name: 'TypeScript', category: 'frontend' },
-    { name: 'JavaScript', category: 'frontend' },
-    { name: 'React', category: 'frontend' },
-    { name: 'Node.js', category: 'backend' },
-    { name: 'Python', category: 'backend' },
-    { name: 'MongoDB', category: 'database' },
-    { name: 'PostgreSQL', category: 'database' },
-    { name: 'Git', category: 'tool' },
+    { name: 'Ejemplo de habilidad frontend 1', category: 'frontend' },
+    { name: 'Ejemplo de habilidad frontend 2', category: 'frontend' },
+    { name: 'Ejemplo de habilidad frontend 3', category: 'frontend' },
+    { name: 'Ejemplo de habilidad frontend 4', category: 'frontend' },
+    { name: 'Ejemplo de habilidad backend 1', category: 'backend' },
+    { name: 'Ejemplo de habilidad backend 2', category: 'backend' },
+    { name: 'Ejemplo de habilidad database 1', category: 'database' },
+    { name: 'Ejemplo de habilidad database 2', category: 'database' },
+    { name: 'Ejemplo de herramienta 1', category: 'tool' },
   ];
 }
